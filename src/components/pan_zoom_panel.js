@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 
 import { zoomClick, panUpdate } from '../actions';
 
-const src = 'https://bonobos-prod-s3.imgix.net/products/18158/original/SHIRT_ShortSleeve_ZebraRun_JetBlack_hero1.jpg?h=7000&w=7000';
+const src2 = 'https://bonobos-prod-s3.imgix.net/products/18158/original/SHIRT_ShortSleeve_ZebraRun_JetBlack_hero1.jpg?h=2500&w=2500';
+const src = 'https://bonobos-prod-s3.imgix.net/products/12465/original/PANT_WashedChinos_TheKhakis_hero1.jpg?h=3000&w=3000';
 
 class PanZoomPanel extends Component {
     constructor(props) {
@@ -26,23 +27,27 @@ class PanZoomPanel extends Component {
         const { dimension } = this.props;
 
         // Put together the transformation from zoom in/out and panning
-        const style = {
+        const panelStyle = {
             width: dimension,
             height: dimension,
             transform: `matrix(${ m[0]},${m[1]},${m[2]},${m[3]},${m[4]},${m[5] })`
+        };
+        const imageStyle = {
+            width: dimension,
+            height: dimension
         };
 
         return(
             <div
                 ref="panel"
                 className="image-panel"
-                style={ style }
+                style={ panelStyle }
                 onTouchStart={ this.panStart.bind(this) }
                 onTouchEnd={ this.panEnd.bind(this) }
                 onMouseDown={ this.panStart.bind(this) }
                 onMouseUp={ this.panEnd.bind(this) }
             >
-                <img className="image" src={ src } />
+                <img style={ imageStyle } className="image" src={ src } />
             </div>
         );
     }
