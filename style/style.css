@@ -1,0 +1,72 @@
+.app-container {
+    background: #f4f4f4;
+    position: relative;
+    overflow: hidden;
+}
+
+/* IMAGE PANEL STYLES */
+
+.image-panel {
+    margin: 0 auto;
+    backface-visibility: hidden;
+    transform-origin: 50% 50% 0px;
+}
+
+.image {
+    max-width: 100%;
+    max-height: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+
+/* CONTROLS STYLES */
+
+.zoom-controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.zoom-button {
+    width: 25px;
+    height: 25px;
+    margin-bottom: 10px;
+    display: block;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.zoom-in-icon {
+    background-image: url('https://bnbs-gramercy-public.s3.amazonaws.com/homework/zoom-in.svg');
+}
+
+.zoom-out-icon {
+    background-image: url('https://bnbs-gramercy-public.s3.amazonaws.com/homework/zoom-out.svg');
+}
+
+.disable {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* RESPONSIVE MOBILE */
+@media only screen and (max-width: 767px) {
+    .app-container {
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .image-panel {
+        width: 100%;
+    }
+}
